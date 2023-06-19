@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_hi_cache: ^0.0.1
+  http: ^0.13.5
   url_launcher: ^6.1.10
 
 dev_dependencies:
