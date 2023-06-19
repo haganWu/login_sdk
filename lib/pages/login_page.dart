@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_sdk/util/padding_extension.dart';
 import 'package:login_sdk/widget/input_widget.dart';
 import 'package:login_sdk/widget/login_button_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../util/string_util.dart';
 
@@ -92,7 +93,11 @@ class _LoginPageState extends State<LoginPage> {
 
   /// 注册
   _jumpRegistration() async {
-    // TODO register
+    // 跳转到接口后台注册账号
+    Uri uri = Uri.parse('https://api.devio.org/uapi/swagger-ui.html#/Account/registrationUsingPOST');
+    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+      debugPrint('Could not launch:$uri');
+    }
   }
 
   /// 检查输入框
