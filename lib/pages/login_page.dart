@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_sdk/dao/login_dao.dart';
+import 'package:login_sdk/util/navigator_util.dart';
 import 'package:login_sdk/util/padding_extension.dart';
 import 'package:login_sdk/widget/input_widget.dart';
 import 'package:login_sdk/widget/login_button_widget.dart';
@@ -120,7 +121,9 @@ class _LoginPageState extends State<LoginPage> {
       await LoginDao.login(userName: userName!, password: password!);
       // 登陆成功
       debugPrint('login success');
-      // TODO HomePage
+      if (mounted) {
+        NavigatorUtil.goToHome(context);
+      }
     } catch (e) {
       debugPrint('login error: ${e.toString()}');
     }

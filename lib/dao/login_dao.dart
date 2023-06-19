@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_hi_cache/flutter_hi_cache.dart';
 import 'package:http/http.dart' as http;
 import 'package:login_sdk/dao/header_util.dart';
+import 'package:login_sdk/util/navigator_util.dart';
 
 /// 登陆接口
 class LoginDao {
@@ -81,6 +82,6 @@ class LoginDao {
   static void logout() {
     // 移除保存的登陆信息
     HiCache.getInstance().remove(kUserInfo);
-    // todo LoginPage
+    NavigatorUtil.goToLogin();
   }
 }
