@@ -1,7 +1,5 @@
 library login_sdk;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
+class LoginConfig {
   int addOne(int value) => value + 1;
 }
