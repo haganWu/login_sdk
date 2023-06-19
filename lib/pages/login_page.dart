@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_sdk/util/padding_extension.dart';
 import 'package:login_sdk/widget/input_widget.dart';
 import 'package:login_sdk/widget/login_button_widget.dart';
 
@@ -37,12 +38,12 @@ class _LoginPageState extends State<LoginPage> {
         top: 30,
         child: ListView(
           children: [
-            const Padding(padding: EdgeInsets.only(top: 36)),
+            36.paddingHeight,
             const Text(
               "ChatGPT",
               style: TextStyle(fontSize: 26, color: Colors.white),
             ),
-            const Padding(padding: EdgeInsets.only(top: 18)),
+            18.paddingHeight,
             InputWidget(
               hint: '请输入账号',
               onChanged: (text) {
@@ -50,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                 _checkInput();
               },
             ),
-            const Padding(padding: EdgeInsets.only(top: 18)),
+            18.paddingHeight,
             InputWidget(
                 hint: '请输入密码',
                 obscureText: true,
@@ -58,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                   password = text;
                   _checkInput();
                 }),
-            const Padding(padding: EdgeInsets.only(top: 36)),
+            36.paddingHeight,
             LoginButtonWidget(
               title: '登陆',
               enable: loginEnable,
