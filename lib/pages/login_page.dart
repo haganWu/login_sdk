@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
     }
     setState(() {
       loginEnable = enable;
-      debugPrint('loginEnable:$loginEnable');
+      // debugPrint('loginEnable:$loginEnable');
     });
   }
 
